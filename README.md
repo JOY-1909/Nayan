@@ -47,9 +47,9 @@ graph TD
     end
 
     subgraph "Clients"
-        Dashboard[Admin Dashboard (React)]
-        Police[Emergency Services (112)]
-        User[User App (React Native)]
+        Dashboard["Admin Dashboard (React)"]
+        Police["Emergency Services (112)"]
+        User["User App (React Native)"]
     end
 
     Backend -->|WebSocket/Alerts| Dashboard
