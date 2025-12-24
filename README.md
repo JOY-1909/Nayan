@@ -177,3 +177,4 @@ We have drawn significant inspiration from [Team Boka](https://github.com/khairn
 *   **Live Feed Integration:** Moving beyond mock data to support real-time video processing from live cameras.
 *   **Robust Backend Architecture:** Re-engineering the backend to handle high-concurrency WebSocket streams and API requests ensuring reliability.
 *   **Mobile-Web Integration:** Seamlessly connecting the mobile user application with the centralized web dashboard for unified situational awareness.
+*   **Latency Reduction:** Contributing on reducing the latency in data transmission and processing.
