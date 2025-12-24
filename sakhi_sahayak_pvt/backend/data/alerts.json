@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "type": "SOS Alert",
+        "message": "SOS triggered by user",
+        "timestamp": "2024-12-23T10:00:00",
+        "read_status": 0,
+        "location": {
+            "lat": 19.076,
+            "lng": 72.877
+        },
+        "source": "Mobile App"
+    },
+    {
+        "id": 2,
+        "type": "Gesture Alert",
+        "message": "Wrist gesture detected - Help signal",
+        "timestamp": "2024-12-23T09:30:00",
+        "read_status": 0,
+        "source": "Camera 1"
+    },
+    {
+        "id": 3,
+        "type": "Violence Detected",
+        "message": "Potential violence detected in camera feed",
+        "timestamp": "2024-12-23T08:15:00",
+        "read_status": 1,
+        "source": "Camera 2"
+    }
+]

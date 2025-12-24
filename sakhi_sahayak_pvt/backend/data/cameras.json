@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "Name": "Demo Camera",
+        "modelNo": "Demo",
+        "brand": "IP Webcam",
+        "ipAddress": "10.181.112.1:8080",
+        "link": "http://10.181.112.1:8080/video",
+        "lat": "19.131071",
+        "lon": "72.916777",
+        "status": "A"
+    }
+]
