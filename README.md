@@ -171,7 +171,7 @@ npx expo start
 
 ## 💡 Inspiration & Credits
 
-We have drawn significant inspiration from **Team Boka** and their project *Sakhi Sahayak*. We are actively contributing to their original vision by transforming it into a fully production-ready product.
+We have drawn significant inspiration from [Team Boka](https://github.com/khairnarhg/sakhi_sahayak_pvt) and their project *Sakhi Sahayak*. We are actively contributing to their original vision by transforming it into a fully production-ready product.
 
 **Our Key Contributions:**
 *   **Live Feed Integration:** Moving beyond mock data to support real-time video processing from live cameras.
