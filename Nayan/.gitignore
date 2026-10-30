@@ -7,4 +7,6 @@
 /backend/workers/__pycache__
 /backend/ml_models/__pycache__
 /backend/ml_models/vmodel.h5
+/backend/ml_models/best.pt
+/app/node_modules
 /backend/helpers/__pycache__

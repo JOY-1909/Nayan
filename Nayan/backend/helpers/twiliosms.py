@@ -21,6 +21,10 @@ def send_sms(message: str, to_phone_numbers: list):
     Returns:
         None
     """
+    if not account_sid or not auth_token or not from_phone_number:
+        print(f"[MOCK TWILIO SMS] No Twilio credentials configured. Simulating SMS to {to_phone_numbers}: '{message}'")
+        return
+
     try:
         client = Client(account_sid, auth_token)
 

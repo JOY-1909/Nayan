@@ -171,9 +171,12 @@ const SignInForm = () => {
               <hr />
               <div className="button-container">
                 <Row>
-                  <div className="update ml-auto mr-auto">
-                    <Button onClick={handleGoogleSignIn}>
+                  <div className="update ml-auto mr-auto d-flex flex-column gap-2 align-items-center">
+                    <Button onClick={handleGoogleSignIn} color="secondary" className="mb-2">
                       Sign in with Google
+                    </Button>
+                    <Button color="info" className="btn-round" onClick={() => navigate("/dashboard")}>
+                      Enter Dashboard as Guest / Demo Admin &rarr;
                     </Button>
                   </div>
                 </Row>

@@ -10,6 +10,7 @@ import * as SecureStore from 'expo-secure-store';
 import * as Contacts from 'expo-contacts';
 import * as Location from 'expo-location';
 import axios from 'axios';
+import { BACKEND_URL } from '../../config';
 export default function SOSNotify() {
   const navigation = useNavigation();
   const hasCalled = useRef(false); // Ensure API calls happen only once
@@ -61,7 +62,7 @@ export default function SOSNotify() {
       const addressData = await latlongtolocation(location.lat, location.lng);
       const address = addressData.display_name || 'Address not found';
 
-      const response = await fetch('https://82b4-2409-40c0-2a-2e74-a973-9d9f-9ec9-9f62.ngrok-free.app/tw/send-sms', {
+      const response = await fetch(`${BACKEND_URL}/tw/send-sms`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +99,7 @@ export default function SOSNotify() {
   // Make a POST request to initiate SOS calls
   const initiateSOSCalls = async () => {
     try {
-      const response = await fetch('https://82b4-2409-40c0-2a-2e74-a973-9d9f-9ec9-9f62.ngrok-free.app/tw/call-emergency-contacts', {
+      const response = await fetch(`${BACKEND_URL}/tw/call-emergency-contacts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -165,7 +166,7 @@ export default function SOSNotify() {
 
   const sendEmergencyAlert = async (location) => {
     try {
-      const response = await fetch("https://82b4-2409-40c0-2a-2e74-a973-9d9f-9ec9-9f62.ngrok-free.app/ws/app-emergency-listener", {
+      const response = await fetch(`${BACKEND_URL}/ws/app-emergency-listener`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,6 +1,5 @@
 import numpy as np
 import cv2
-from keras.models import load_model
 from collections import deque
 from datetime import datetime
 import time
@@ -12,6 +11,10 @@ class continuousViolenceDetector:
     def load_model(model_path):
         """Load the violence detection model."""
         print("[INFO] Loading model...")
+        try:
+            from tensorflow.keras.models import load_model
+        except ImportError:
+            from keras.models import load_model
         return load_model(model_path)
 
     @staticmethod

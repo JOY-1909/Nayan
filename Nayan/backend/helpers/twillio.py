@@ -17,6 +17,10 @@ def initiate_call(priority_config: dict, to_phone_numbers: list):
     """
     Initiates calls to a list of phone numbers based on priority.
     """
+    if not account_sid or not auth_token or not from_phone_number:
+        print(f"[MOCK TWILIO CALL] No Twilio credentials configured. Simulating priority '{priority_config.get('priority')}' call to {to_phone_numbers}")
+        return
+
     try:
         priority = priority_config.get("priority", "low").lower()
         if priority == "high":

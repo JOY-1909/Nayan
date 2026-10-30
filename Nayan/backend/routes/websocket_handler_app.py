@@ -11,15 +11,26 @@ from helpers.twiliosms import send_sms
 router = APIRouter()
 
 # Initialize the models
-stt_model_path = "E:/SIH-SakhiSahayak/sakhi_sahayak_pvt/backend/ml_models/vosk-model-en-in-0.5"
+stt_model_path = os.getenv("VOSK_MODEL_PATH", os.path.join(os.path.dirname(__file__), "..", "ml_models", "vosk-model-en-in-0.5"))
 speech_to_text = SpeechToText(stt_model_path)
 emotion_detector = EmotionDetector()
 keyword_detector = KeywordDetector()
 classifier = SituationClassifier()
 
-# Load models at startup
-emotion= emotion_detector.load_model()
-speech_to_text.load_model()
+# Load models at startup safely
+try:
+    emotion = emotion_detector.load_model()
+except Exception as e:
+    print(f"Warning: Failed to load EmotionDetector: {e}")
+    emotion = None
+
+try:
+    if os.path.exists(stt_model_path):
+        speech_to_text.load_model()
+    else:
+        print(f"Notice: Vosk model not found at {stt_model_path}. Audio STT will be skipped unless installed.")
+except Exception as e:
+    print(f"Warning: Failed to load Vosk model: {e}")
 
 class AudioProcessor:
     @staticmethod

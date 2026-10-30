@@ -71,5 +71,6 @@ class DataProcessor:
 
     @staticmethod
     def get_crime_data():
-        crimes_df = DataProcessor.load_crimes_data()
+        crimes_df = DataProcessor.crimes_file
         return crimes_df[['City', 'Crime Description', 'Date Reported']].to_dict(orient='records')
+
